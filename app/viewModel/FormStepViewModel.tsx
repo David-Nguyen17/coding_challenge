@@ -11,7 +11,12 @@ import {
   PulldachIcon,
   SatteldachIcon,
 } from "../assets/icons";
-import { ICard, IInputFormStep, STEP_TYPE } from "../types/FormStepType";
+import {
+  GENDER_TYPE,
+  ICard,
+  IInputFormStep,
+  STEP_TYPE,
+} from "../types/FormStepType";
 import { InputsFormStepSchema } from "../validation/FormStepValidation";
 
 const FormStepViewModel = () => {
@@ -79,6 +84,13 @@ const FormStepViewModel = () => {
       ? "translate-x-[80%]"
       : "translate-x-[0%]";
   }, [activeStep]);
+  const animationCard = useMemo(() => {
+    return activeStep === STEP_TYPE.FIRST_STEP
+      ? "translate-x-0"
+      : activeStep === STEP_TYPE.SECOND_STEP
+      ? "-translate-x-1/3"
+      : "-translate-x-2/3";
+  }, [activeStep]);
   const percentLine = useMemo(() => {
     return activeStep === STEP_TYPE.SECOND_STEP
       ? 50
@@ -86,21 +98,42 @@ const FormStepViewModel = () => {
       ? 90
       : 10;
   }, [activeStep]);
+  const onClickFirst = (item: ICard) => {
+    setValue("firstStep", item);
+    setValue("activeStep", STEP_TYPE.SECOND_STEP);
+  };
+  const onClickSecond = (item: ICard) => {
+    setValue("secondStep", item);
+    setValue("activeStep", STEP_TYPE.THIRD_STEP);
+  };
+  const onClickBack = () => {
+    if (activeStep === STEP_TYPE.THIRD_STEP) {
+      setValue("activeStep", STEP_TYPE.SECOND_STEP);
+    } else {
+      setValue("activeStep", STEP_TYPE.FIRST_STEP);
+    }
+  };
+  const onChangeGender = (value: GENDER_TYPE) => {
+    setValue("gender", value);
+  };
   return {
     dataFirstStep,
     activeStep,
     firstStep,
     secondStep,
-    setValue,
     dataSecondStep,
     listCarousel,
     register,
     onPressSubmit: handleSubmit(onPressSubmit),
     errors,
-    watch,
     gender,
     animationLine,
     percentLine,
+    onClickFirst,
+    onClickSecond,
+    onClickBack,
+    animationCard,
+    onChangeGender,
   };
 };
 

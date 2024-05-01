@@ -26,3 +26,10 @@ export interface IInputFormStep {
   house_number: string;
   gender: GENDER_TYPE;
 }
+
+export interface IFormStepProps {
+  data: ICard[];
+  onClick: (item: ICard) => void;
+  onBack?: () => void;
+  selected: ICard;
+}
