@@ -32,7 +32,7 @@ const CardItem = (props: IProps) => {
       className={classnames(
         `group flex flex-row md:flex-col h-[60px] md:h-[220px] md:w-[197.5px] pl-4 md:pl-0 gap-4 
       md:ml-0 rounded-[10px] md:gap-[20px] bg-white items-center shadow-[-3px_5px_40px_-7px_rgba(0,0,0,0.3)]
-      border-2 border-transparent group-hover:border-2 hover:border-dark_eclipse
+      border-2 border-transparent group-hover:border-2 hover:border-dark_eclipse overflow-hidden
       ${stylesSelected}`,
         className
       )}
@@ -48,7 +48,8 @@ const CardItem = (props: IProps) => {
         unoptimized={true}
       />
       <div
-        className={`flex flex-1 group-hover:bg-dark_eclipse h-[100%] rounded-e-lg w-[100%] md:justify-center items-center 
+        className={`flex flex-1 group-hover:bg-dark_eclipse h-[100%] rounded-e-lg w-[100%] 
+        md:justify-center items-center 
         md:items-start md:group-hover:transition-all md:rounded-b-lg md:rounded-e-none
         ${stylesSelectedContent}`}
       >

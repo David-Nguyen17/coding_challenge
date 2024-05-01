@@ -23,7 +23,7 @@ const FinalStep = (props: IProps) => {
   return (
     <div className={`w-screen flex flex-col justify-start items-center`}>
       <div>
-        <div className="mx-[10px] md:mx-10 w-[90%] lg:max-w-[834px] justify-start md:max-w-[80%]">
+        <div className="mx-[10px] md:mx-10 w-[96%] lg:max-w-[834px] justify-start md:max-w-[90%]">
           <div className="text-left md:text-center text-dark_eclipse text-lg mt-4	font-medium	leading-6	mb-2">
             Gratulation, das Angebot ist in Ihrer Region noch verfügbar! Wir
             senden Ihnen gerne kostenlose Informationen zu.

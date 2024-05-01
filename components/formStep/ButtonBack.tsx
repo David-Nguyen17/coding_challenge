@@ -4,7 +4,7 @@ import Image from "next/image";
 const ButtonBack = ({ onBack }: { onBack?: () => void }) => {
   return (
     <button
-      className="flex gap-1 items-center mx-5 md:ml-16 mt-9"
+      className="flex gap-1 items-center mx-5 md:ml-16 mt-9 mb-10"
       onClick={() => {
         if (onBack) {
           onBack();
