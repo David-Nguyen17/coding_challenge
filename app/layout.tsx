@@ -1,8 +1,31 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const Scandia = localFont({
+  src: [
+    {
+      path: "./assets/fonts/Scandia-Light.woff2",
+      weight: "400",
+      style: "light",
+    },
+    {
+      path: "./assets/fonts/Scandia-Regular.woff2",
+      weight: "400",
+      style: "regular",
+    },
+    {
+      path: "./assets/fonts/Scandia-Medium.woff2",
+      weight: "500",
+      style: "medium",
+    },
+    {
+      path: "./assets/fonts/Scandia-Bold.woff2",
+      weight: "700",
+      style: "bold",
+    },
+  ],
+});
 
 export const metadata: Metadata = {
   title: "Coding Challenge",
@@ -16,7 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className} suppressHydrationWarning={true}>
+      <body className={Scandia.className} suppressHydrationWarning={true}>
         {children}
       </body>
     </html>
