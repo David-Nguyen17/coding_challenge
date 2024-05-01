@@ -26,8 +26,8 @@ export default function Home() {
   } = FormStepViewModel();
 
   return (
-    <main className="w-full overflow-hidden">
-      <div>
+    <main>
+      <div className="w-full overflow-hidden">
         <Header activeStep={activeStep} percentLine={percentLine} />
         <div className="relative">
           <div

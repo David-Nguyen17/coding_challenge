@@ -1,5 +1,6 @@
 "use client";
 
+import classnames from "classnames";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 import { useMemo } from "react";
@@ -9,10 +10,11 @@ export interface IProps {
   src?: string | StaticImport;
   onClick: () => void;
   selected?: boolean;
+  className?: string;
 }
 
 const CardItem = (props: IProps) => {
-  const { title, src, onClick, selected } = props;
+  const { title, src, onClick, selected, className } = props;
   const stylesSelected = useMemo(() => {
     return selected ? "border-2 border-dark_eclipse" : "";
   }, [selected]);
@@ -27,10 +29,13 @@ const CardItem = (props: IProps) => {
   }, [selected]);
   return (
     <button
-      className={`group flex flex-row md:flex-col h-[60px] md:h-[220px] md:w-[197.5px] pl-4 md:pl-0 gap-4 
+      className={classnames(
+        `group flex flex-row md:flex-col h-[60px] md:h-[220px] md:w-[197.5px] pl-4 md:pl-0 gap-4 
       md:ml-0 rounded-[10px] md:gap-[20px] bg-white items-center shadow-[-3px_5px_40px_-7px_rgba(0,0,0,0.3)]
       border-2 border-transparent group-hover:border-2 hover:border-dark_eclipse
-      ${stylesSelected}`}
+      ${stylesSelected}`,
+        className
+      )}
       onClick={onClick}
     >
       <Image

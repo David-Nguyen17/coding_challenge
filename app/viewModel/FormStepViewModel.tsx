@@ -76,6 +76,16 @@ const FormStepViewModel = () => {
   }, [dataFirstStep, dataSecondStep]);
   const onPressSubmit = (value: IInputFormStep) => {
     console.log("value", value);
+    /**
+     * In this function we can use some method call api
+     * 1. Axios
+     * 2. Redux Toolkit
+     * 3. React Query
+     *
+     * Middle ware we can use redux thunk or redux saga.
+     * Redux toolkit and React Query both of theme have method cache data
+     *
+     */
   };
   const animationLine = useMemo(() => {
     return activeStep === STEP_TYPE.SECOND_STEP

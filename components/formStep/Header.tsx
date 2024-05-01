@@ -11,11 +11,11 @@ const Header = (props: IProps) => {
     <div
       className={`${
         activeStep === STEP_TYPE.THIRD_STEP ? "bg-black_knight" : ""
-      }`}
+      } flex flex-col justify-start items-center`}
     >
-      <div className="w-full mx-5 md:mx-10 pt-8">
+      <div className="w-full mx-5 md:mx-10 pt-20 flex flex-col justify-center items-center">
         <div
-          className={`w-[90%] lg:max-w-[834px] justify-start md:max-w-[80%] rounded-lg h-1 flex items-center my-2`}
+          className={`w-[80%] lg:max-w-[834px] md:max-w-[92%] rounded-lg h-1 flex my-2`}
         >
           <div
             className={`bg-guppies_green relative h-1 w-[${percentLine}%] 
