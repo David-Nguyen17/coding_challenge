@@ -87,13 +87,7 @@ const FormStepViewModel = () => {
      *
      */
   };
-  const animationLine = useMemo(() => {
-    return activeStep === STEP_TYPE.SECOND_STEP
-      ? "translate-x-[50%]"
-      : activeStep === STEP_TYPE.THIRD_STEP
-      ? "translate-x-[80%]"
-      : "translate-x-[0%]";
-  }, [activeStep]);
+
   const animationCard = useMemo(() => {
     return activeStep === STEP_TYPE.FIRST_STEP
       ? "translate-x-0"
@@ -137,7 +131,6 @@ const FormStepViewModel = () => {
     onPressSubmit: handleSubmit(onPressSubmit),
     errors,
     gender,
-    animationLine,
     percentLine,
     onClickFirst,
     onClickSecond,
